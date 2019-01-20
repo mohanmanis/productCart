@@ -1,0 +1,177 @@
+:root {
+    --color-white: #f4f4f4;
+    --color-gray-light: #d1d1d1;
+    --color-black: #222;
+    --color-primary: #3184d1;
+    --color-primary-light: #a9d0f5;
+    --color-danger: #e90000;
+    --color-danger-light: #f5b5b5;
+    --min-width: 360px;
+    --max-width: 1200px;
+    --base-font-family: Arial, Helvetica, sans-serif;
+    --base-padding: 10px;
+    font-size: 12px;
+}
+
+@media screen and (min-width: 600px) {
+    :root {
+        --base-padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    :root {
+        --base-padding: 20px;
+        font-size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    min-width: var(--min-width);
+    color: var(--color-black);
+    font-family: var(--base-font-family);
+    background-color: rgba(198, 198, 198, 0.2);
+}
+
+/* ----------------- Layout ----------------- */
+
+.main-container {
+    display: grid;
+    grid-gap: var(--base-padding);
+    grid-template-columns:  3fr 1fr;
+    margin: 57px auto;
+    padding: 0 50px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: white;
+}
+.section2 {
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: white;
+}
+
+/* ----------------- Typography ----------------- */
+
+h1, h2, h3 {
+    font-weight: 400;
+    margin: 1rem 2rem;
+}
+
+p {
+    margin: 1rem auto;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+
+/* ----------------- Cart ----------------- */
+
+.cart {
+    display: grid;
+    grid-gap: var(--base-padding);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.cart h3 {
+    margin: 0;
+}
+
+.cart__item {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--base-padding);
+    grid-template-columns: 1fr 6fr;
+    grid-gap: 10px;
+    text-align: left;
+}
+.cart__item__name{
+    text-transform: uppercase;
+    padding: 7px 0;
+}
+.cart__item__price, .cart__item__delivery_charge,cart__item__quantity{
+    padding: 7px 0;
+}
+
+
+
+.cart__item__image {
+    max-width: 28px;
+}
+
+@media screen and (min-width: 600px) {
+    .cart__item__image {
+        max-width: 38.5px;
+    }
+}
+
+.cart__item__price:before {
+    content: 'RS';
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--base-padding);
+}
+
+button {
+    font-family: var(--base-font-family);
+    cursor: pointer;
+    font-size: .95rem;
+    border: none;
+}
+
+:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+
+.btn--small {
+    padding: .2rem .4rem;
+}
+
+.btn--primary {
+    background: rgba(198, 198, 198, 0.2);
+    border-radius: 50%;
+}
+
+.btn--danger:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px var(--color-danger-light);
+}
+
+.price-text{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+.amount-payable{
+    margin-top: 61px;
+}
+
+#delivery_charges:before,#amount_payable:before,#total_price:before{
+    content: 'RS. ';
+}
+.price-details{
+    padding: 4%;
+}
+
